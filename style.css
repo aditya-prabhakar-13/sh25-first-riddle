@@ -1,0 +1,142 @@
+/* Import Pokémon-style font */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+/* Basic Setup */
+body {
+    font-family: 'Press Start 2P', cursive;
+    background-color: #2a75bb;
+    background-image: url('https://assets.pokemon.com/assets/cms2/img/pokedex/full/143.png'); /* Snorlax background */
+    background-position: bottom right;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-attachment: fixed;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px; /* Provides spacing on the edges of the screen */
+    box-sizing: border-box; /* Ensures padding is included in the element's total width and height */
+}
+
+/* Main container for the game */
+.container {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px 40px;
+    border-radius: 15px;
+    border: 5px solid #ffcb05;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3), 0 0 0 10px #3c5aa6;
+    text-align: center;
+    width: 100%; /* Ensures the container shrinks on smaller screens */
+    max-width: 600px; /* Prevents the container from being too wide on large screens */
+    transition: all 0.3s ease;
+}
+
+/* Title style */
+h1 {
+    color: #3c5aa6;
+    text-shadow: 2px 2px #ffcb05;
+    font-size: 2rem;
+    margin-bottom: 25px;
+}
+
+/* Input field for Team ID */
+#teamIdInput {
+    font-family: 'Press Start 2P', cursive;
+    width: 100%; /* Makes the input field responsive */
+    box-sizing: border-box; /* Ensures padding doesn't break the layout */
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 3px solid #3c5aa6;
+    border-radius: 8px;
+    font-size: 1rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+#teamIdInput::placeholder {
+    color: #aaa;
+}
+
+/* Submit button style */
+button {
+    font-family: 'Press Start 2P', cursive;
+    background-color: #e3350d; /* Pokémon Red */
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-bottom: 5px solid #a02509;
+    transition: all 0.1s ease-in-out;
+}
+
+button:hover {
+    background-color: #f34a24;
+}
+
+button:active {
+    transform: translateY(3px);
+    border-bottom-width: 2px;
+}
+
+/* Display area for the riddle */
+#riddleDisplay {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border: 3px dashed #3c5aa6;
+    border-radius: 10px;
+    min-height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1.6;
+    font-size: 0.9rem;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+.riddle-success {
+    border-style: solid;
+    background-color: #e8f5e9;
+    color: #2e7d32;
+}
+
+.riddle-error {
+    border-style: solid;
+    border-color: #e3350d;
+    background-color: #ffebee;
+    color: #c62828;
+}
+
+/* =================================== */
+/* == RESPONSIVE DESIGN FOR MOBILES == */
+/* =================================== */
+/* These styles apply only when the screen width is 600px or less. */
+@media (max-width: 600px) {
+    body {
+        /* On small screens, move the background image to the center bottom */
+        /* to avoid overlapping with the main content container.           */
+        background-position: center bottom;
+    }
+
+    .container {
+        padding: 20px; /* Reduce padding on smaller screens */
+    }
+
+    h1 {
+        font-size: 1.5rem; /* Make the title smaller */
+    }
+
+    button, #teamIdInput {
+        font-size: 0.8rem; /* Make button and input text smaller */
+    }
+
+    #riddleDisplay {
+        font-size: 0.85rem; /* Adjust riddle text size */
+        line-height: 1.5;
+    }
+}
