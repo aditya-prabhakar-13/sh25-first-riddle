@@ -160,7 +160,7 @@ form.addEventListener('submit', function(event) {
 
     } else {
         // If the ID is not found, display an error message
-        riddleDisplay.textContent = "Team ID not found! Are you sure you entered it correctly, trainer? 🤔";
+        riddleDisplay.textContent = "No Record Found in Pokedex! Are you sure you entered it correctly, trainer? 🤔";
         riddleDisplay.classList.add('riddle-error');
     }
 });
