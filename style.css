@@ -1,11 +1,11 @@
-/* Import Pokémon-style font */
+/* Import Pokémon-style font from Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
-/* Basic Setup */
+/* Basic Setup for the entire page */
 body {
     font-family: 'Press Start 2P', cursive;
-    background-color: #2a75bb;
-    background-image: url('https://assets.pokemon.com/assets/cms2/img/pokedex/full/143.png'); /* Snorlax background */
+    background-color: #2a75bb; /* Pokémon blue background color */
+    background-image: url('https://assets.pokemon.com/assets/cms2/img/pokedex/full/143.png'); /* Snorlax background image */
     background-position: bottom right;
     background-repeat: no-repeat;
     background-size: contain;
@@ -16,8 +16,8 @@ body {
     align-items: center;
     min-height: 100vh;
     margin: 0;
-    padding: 20px; /* Provides spacing on the edges of the screen */
-    box-sizing: border-box; /* Ensures padding is included in the element's total width and height */
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 /* Main container for the game */
@@ -25,11 +25,11 @@ body {
     background-color: rgba(255, 255, 255, 0.9);
     padding: 30px 40px;
     border-radius: 15px;
-    border: 5px solid #ffcb05;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3), 0 0 0 10px #3c5aa6;
+    border: 5px solid #ffcb05; /* Pokémon yellow border */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3), 0 0 0 10px #3c5aa6; /* Pokémon dark blue outer shadow */
     text-align: center;
-    width: 100%; /* Ensures the container shrinks on smaller screens */
-    max-width: 600px; /* Prevents the container from being too wide on large screens */
+    width: 100%;
+    max-width: 600px;
     transition: all 0.3s ease;
 }
 
@@ -44,8 +44,8 @@ h1 {
 /* Input field for Team ID */
 #teamIdInput {
     font-family: 'Press Start 2P', cursive;
-    width: 100%; /* Makes the input field responsive */
-    box-sizing: border-box; /* Ensures padding doesn't break the layout */
+    width: 100%;
+    box-sizing: border-box;
     padding: 12px;
     margin-bottom: 20px;
     border: 3px solid #3c5aa6;
@@ -62,14 +62,14 @@ h1 {
 /* Submit button style */
 button {
     font-family: 'Press Start 2P', cursive;
-    background-color: #e3350d; /* Pokémon Red */
+    background-color: #e3350d; /* Pokémon red */
     color: white;
     border: none;
     padding: 15px 30px;
     border-radius: 10px;
     font-size: 1rem;
     cursor: pointer;
-    border-bottom: 5px solid #a02509;
+    border-bottom: 5px solid #a02509; /* Darker red for a 3D effect */
     transition: all 0.1s ease-in-out;
 }
 
@@ -82,7 +82,7 @@ button:active {
     border-bottom-width: 2px;
 }
 
-/* Display area for the riddle */
+/* Display area for the image hint */
 #riddleDisplay {
     margin-top: 30px;
     padding: 20px;
@@ -99,44 +99,45 @@ button:active {
     transition: all 0.3s ease;
 }
 
+/* Style for a successful hint display */
 .riddle-success {
     border-style: solid;
-    background-color: #e8f5e9;
+    background-color: #e8f5e9; /* Light green */
     color: #2e7d32;
 }
 
+/* Style for an error message display */
 .riddle-error {
     border-style: solid;
     border-color: #e3350d;
-    background-color: #ffebee;
+    background-color: #ffebee; /* Light red */
     color: #c62828;
 }
 
-/* =================================== */
-/* == RESPONSIVE DESIGN FOR MOBILES == */
-/* =================================== */
-/* These styles apply only when the screen width is 600px or less. */
+/* Styles for the image hint itself */
+#riddleDisplay img {
+    max-width: 100%;
+    max-height: 250px; /* Prevents image from becoming too tall */
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Responsive Design for mobile devices (screens 600px or smaller) */
 @media (max-width: 600px) {
     body {
-        /* On small screens, move the background image to the center bottom */
-        /* to avoid overlapping with the main content container.           */
         background-position: center bottom;
     }
-
     .container {
         padding: 20px; /* Reduce padding on smaller screens */
     }
-
     h1 {
         font-size: 1.5rem; /* Make the title smaller */
     }
-
     button, #teamIdInput {
         font-size: 0.8rem; /* Make button and input text smaller */
     }
-
     #riddleDisplay {
-        font-size: 0.85rem; /* Adjust riddle text size */
+        font-size: 0.85rem;
         line-height: 1.5;
     }
 }
